@@ -1,6 +1,7 @@
 class NamesController < ApplicationController
   before_action :set_name, only: [:show, :edit, :update, :destroy]
 
+  http_basic_authenticate_with name: "dhh", password: "secret", exept: [:index, :show]
   # GET /names
   # GET /names.json
   def index
